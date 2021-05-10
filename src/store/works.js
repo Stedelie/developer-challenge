@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'; 
 
 const slice = createSlice({
     name: 'works',
@@ -24,4 +24,5 @@ const slice = createSlice({
     }
 })
 
+export const {setLoadingToTrue, requestFailed, worksReceived} = slice.actions;
 export default slice.reducer;
