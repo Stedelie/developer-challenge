@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'; 
+// import { createSelector } from 'reselect';
 
 const slice = createSlice({
     name: 'works',
@@ -23,6 +24,12 @@ const slice = createSlice({
 		}
     }
 })
+
+// filters:
+// export const getSoldOutWorks = createSelector(
+//    state => state.entities.works.list
+//    works => works.filter 
+//)
 
 export const {setLoadingToTrue, requestFailed, worksReceived} = slice.actions;
 export default slice.reducer;
