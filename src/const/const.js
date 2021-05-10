@@ -1,0 +1,1 @@
+export const WORKS_ENDPOINT = "/works.json";
