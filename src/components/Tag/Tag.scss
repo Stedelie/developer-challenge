@@ -1,5 +1,7 @@
+@import '../../styles/variables.scss';
+
 .Tag {
-       border: 1px solid #acb2b4;
+       border: 1px solid $cloud;
        font-size: 11px;
        line-height: 22px;
        text-align: center;
