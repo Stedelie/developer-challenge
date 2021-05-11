@@ -1,9 +1,11 @@
-import Loading from 'components/Loading/Loading';
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 
 import { loadWorks } from 'store/works';
 import Header from '../Header';
+import Loading from 'components/Loading/Loading';
+import Works from 'components/Works/Works'
+
 import STYLES from './App.scss';
 
 
@@ -33,13 +35,12 @@ function App(props) {
       <main className={getClassName('App__main')}>
         <p>Your turn good luck 👍 </p>
         {/* TODO: Add your components here */}
-        <Loading />
+        { loading ? (
+          <Loading />
+        ) : (
+          <Works works={list}/>
+        )}
 
-        { 
-          list.map(el => {
-            return (<div key={el.id} >{el.title}</div>)
-          })
-        }
       </main>
     </div>
   )
