@@ -1,3 +1,4 @@
+import Loading from 'components/Loading/Loading';
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 
@@ -32,6 +33,8 @@ function App(props) {
       <main className={getClassName('App__main')}>
         <p>Your turn good luck 👍 </p>
         {/* TODO: Add your components here */}
+        <Loading />
+
         { 
           list.map(el => {
             return (<div key={el.id} >{el.title}</div>)
