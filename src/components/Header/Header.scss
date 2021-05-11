@@ -1,9 +1,9 @@
 @import '../../styles/mixin.scss';
 @import '../../styles/variables.scss';
 .Header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  margin-top: 0;
+  width: 100%;
   background-color: $white;
 
   @include box-shadow-sm;

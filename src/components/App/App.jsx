@@ -8,7 +8,6 @@ import Works from 'components/Works/Works'
 
 import STYLES from './App.scss';
 
-
 const getClassName = (className) => STYLES[className] || 'UNKNOWN';
 
 const mapStateToProps = (state) => {
@@ -33,14 +32,14 @@ function App(props) {
     <div className={getClassName('App')}>
       <Header />
       <main className={getClassName('App__main')}>
-        <p>Your turn good luck 👍 </p>
         {/* TODO: Add your components here */}
-        { loading ? (
-          <Loading />
-        ) : (
-          <Works works={list}/>
-        )}
-
+        <div className={getClassName('App__works_wrapper')}>
+          { loading ? (
+            <Loading />
+          ) : (
+            <Works works={list}/>
+          )}
+        </div>
       </main>
     </div>
   )

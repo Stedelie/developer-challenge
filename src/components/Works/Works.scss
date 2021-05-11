@@ -1,0 +1,18 @@
+.Work{
+    height: 400px;
+    flex-basis: 50%;
+    border: 1px solid #333333;
+    box-sizing: border-box;
+
+    img {
+        max-width: 50%;
+    }
+
+    &__tag {
+        height: 10%;
+    }
+
+    &__img {
+        height: 50%;
+    }
+}

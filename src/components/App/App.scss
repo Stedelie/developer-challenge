@@ -3,4 +3,12 @@
   &__main {
  
   }
+
+  &__works_wrapper {
+    padding-top: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }

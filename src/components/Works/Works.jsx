@@ -3,20 +3,28 @@ import React from 'react';
 import Price from 'components/Price/Price';
 import Tag from 'components/Tag/Tag';
 
+import STYLES from 'components/Works/Works.scss';
+
+const getClassName = (className) => STYLES[className] || 'UNKNOWN';
+
 const Works = ({works}) => {
     return (
-        <div>
+        <>
             {works.map(work => {
                 return(
-                    <div key={work.id}>
+                    <div className={getClassName('Work')} key={work.id}>
+                        <div className={getClassName('Work__tag')}>
+                            <Tag tags={work.tags} />
+                        </div>
+                        <div className={getClassName('Work__img')}>
+                            <img src={work.image} alt={work.title} />
+                        </div>
                         {work.title}
-                        <img src={work.image} alt={work.title} />
-                        <Tag tags={work.tags} />
                         <Price price={work.price} />
                     </div>
                 )
             })}
-        </div>
+        </>
     );
 };
 
