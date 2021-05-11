@@ -8,10 +8,14 @@ const getClassName = (className) => STYLES[className] || 'UNKNOWN';
 
 const Tag = ({tags}) => {
     return (
-        <div className={getClassName('Tag')}> 
-            {getTagForWork(tags)}
-        </div>
-    )
+        <>
+        { (getTagForWork(tags) !== '') && (
+            <div className={getClassName('Tag')}> 
+                {getTagForWork(tags)}
+            </div>
+        )}
+        </>
+    );
 };
 
 export default Tag;

@@ -19,8 +19,10 @@ const Works = ({works}) => {
                         <div className={getClassName('Work__img')}>
                             <img src={work.image} alt={work.title} />
                         </div>
+                        <div className={getClassName('Work__desc')}>
                         {work.title}
                         <Price price={work.price} />
+                        </div>
                     </div>
                 )
             })}
