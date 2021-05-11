@@ -15,6 +15,7 @@
 I like working on the store using Redux, I find it a good way to separate the logic layer from the UI.
 This way I can focus on testing and implementing the business logic (for example the choice of tag to display) and then I can start working on the UI.
 I think my implementation of the store is very clean and ready to be expanded and tested. The configuration of the store allow for multiple slices of the store to be added both in terms of entities and in terms of logic (authentication for example).
+On top of that there's also a commented example of a filter using reselect to implement a search/filter function.
 
 ### Q) Which parts did you spend the most time with? What did you find most difficult?
 
