@@ -21,7 +21,7 @@ const Works = ({works}) => {
                         </div>
                         <div className={getClassName('Work__desc')}>
                         {work.title}
-                        <Price price={work.price} />
+                        <Price className={getClassName('Work__price')} price={work.price} />
                         </div>
                     </div>
                 )
