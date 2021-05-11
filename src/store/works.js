@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'; 
+import { WORKS_ENDPOINT } from 'const/const';
+import { apiCallBegan } from './api';
 // import { createSelector } from 'reselect';
 
 const slice = createSlice({
@@ -18,7 +20,7 @@ const slice = createSlice({
 			state.error.push(action.payload);
 		},
         worksReceived: (state, action) => {
-			state.list = state.list.concat(action.payload);
+			state.list = state.list.concat(action.payload.works);
 			state.lastFetch = Date.now();
 			state.loading = false;
 		}
@@ -30,6 +32,21 @@ const slice = createSlice({
 //    state => state.entities.works.list
 //    works => works.filter 
 //)
+
+const loadData = (url, onSuccess) => (dispatch) => {
+	return dispatch(
+		apiCallBegan({
+			url,
+			onStart: setLoadingToTrue.type,
+			onSuccess,
+			onError: requestFailed.type,
+		})
+	);
+};
+
+export const loadWorks = () => {
+	return loadData(WORKS_ENDPOINT, worksReceived.type);
+};
 
 export const {setLoadingToTrue, requestFailed, worksReceived} = slice.actions;
 export default slice.reducer;
